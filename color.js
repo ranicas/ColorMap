@@ -7,11 +7,12 @@
 	$("body").mousemove(function(event) {
 		// debugger
 		console.log(event.clientX + " " + sumDiv + " " + (heightDiv + widthDiv))
-		$("body").css("background-color", "rgb(" + 
-			(event.clientX / widthDiv) + "," + 
-			(event.clientY / heightDiv) + "," + 
-			((event.clientX + event.clientY) / sumDiv) + ")");
-	})
+		var rgbVal = Math.floor((event.clientX / widthDiv)) + "," + 
+								 Math.floor((event.clientY / heightDiv)) + "," + 
+								 Math.floor(((event.clientX + event.clientY) / sumDiv));
+		console.log(rgbVal);
+		$("body").css("background-color", "rgb(" + rgbVal + ")");
+	});
 
    
 })();
